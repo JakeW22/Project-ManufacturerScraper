@@ -1,2 +1,2 @@
 # Project-ManufacturerScraper
-Scraping Company Data of Welsh Buisnesses
+Scraping Company Data of Welsh Businesses
