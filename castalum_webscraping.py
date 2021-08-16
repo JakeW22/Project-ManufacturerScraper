@@ -17,8 +17,6 @@ browser.open(url)
 #See if browser successfully found
 #print(browser.url)
 
-
-
 main_page = browser.page
 
 loop_count = 0
@@ -32,7 +30,7 @@ for main_info in main_page:
         print(info.text)
     loop_count +=1
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
 
 browser.follow_link("what-we-do")
@@ -53,8 +51,9 @@ for what_info in what_we_do:
         print(title.text)
     for text in what_info_text:
         print(text.text)
+    loop_count +=1
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
 
 browser.follow_link("our-components")
@@ -70,8 +69,9 @@ for components in our_components:
         print(title.text)
     for text in our_components_text:
         print(text.text)
+    loop_count +=1
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
 
 browser.follow_link("our-policies")
@@ -87,8 +87,9 @@ for policies in our_policies:
         print(title.text)
     for text in our_policies_text:
         print(text.text)
+    loop_count +=1
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
 
 browser.follow_link("who-we-are")
@@ -104,8 +105,9 @@ for who_we_are in us:
         print(title.text)
     for text in who_we_are_text:
         print(text.text)
+    loop_count +=1
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
 
 browser.follow_link("our-awards")
@@ -121,6 +123,7 @@ for our_awards in awards:
         print(title.text)
     for text in our_awards_text:
         print(text.text)
+    loop_count +=1    
     print(loop_count)
-    if loop_count == 1:
+    if loop_count >= 1:
         break
