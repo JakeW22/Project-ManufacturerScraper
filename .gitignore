@@ -132,3 +132,7 @@ dmypy.json
 # Visual Studio Code
 .vscode
 .vscode/launch.json
+
+
+# Files
+safekeeping.py

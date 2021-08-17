@@ -37,7 +37,7 @@ browser.follow_link(about_link)
 
 # Now moving into the locations of about dynacast and extracting all the locations of their workplaces:
 browser.follow_link("/locations")
-# print(browser.url)
+#print(browser.url)
 
 locations_page = browser.page
 #print(locations_page)
@@ -52,6 +52,5 @@ locations_list = locations_page.find_all("div", id="location-list")
 for locations_grid in locations_list:
     grid = locations_grid.find_all_next("div", class_="grid-4")
 
-print(grid)
+#print(grid)
 
-    
