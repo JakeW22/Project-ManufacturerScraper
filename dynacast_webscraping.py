@@ -35,22 +35,25 @@ browser.follow_link(about_link)
 
 #print(browser.url)
 
-# Now moving into the locations of about dynacast and extracting all the locations of their workplaces:
-browser.follow_link("/locations")
+
+# Extracting data from investor relations in the about section:
+browser.follow_link("/investor-relations")
 #print(browser.url)
 
-locations_page = browser.page
-#print(locations_page)
+invrel_page = browser.page
+pdf_loop = 0
+for policies in invrel_page:
+    polices = invrel_page.find("div", style="background-color: none;")
+    pdfs = polices.find_all("a")
+    pdf_loop += 1
+    #print("Pdf", pdf_loop, pdfs)
+    
+for href in pdfs:
+    output_invrel_pdfs = url + href["href"]
+    #print(output_invrel_pdfs)
 
-locations_list = []
-locations_description = locations_page.find("h2")
-output_loc_descrip = locations_description.text
-locations_list.append(output_loc_descrip)
+# Moving on to scraping data in specialty die casting section:
+browser.follow_link("/speciality-die-casting")
 
-locations_list = locations_page.find_all("div", id="location-list")
-
-for locations_grid in locations_list:
-    grid = locations_grid.find_all_next("div", class_="grid-4")
-
-#print(grid)
+print(browser.url)
 
